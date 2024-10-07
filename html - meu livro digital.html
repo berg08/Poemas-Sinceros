@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas que nunca te enviei</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #FFC0CB 0%, #FF69B4 100%);
+            margin: 0;
+            padding: 20px;
+            color: #C71585;
+        }
+
+        #title {
+            font-size: 3em;
+            color: #ff6f61;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #sub-title {
+            font-size: 1.8em;
+            color: #444;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        #message-container {
+            text-align: center;
+            display: none;
+        }
+
+        .card {
+            font-size: 50px;
+            color: #ff6f61;
+            cursor: pointer;
+            position: absolute;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        #final-message {
+            display: none;
+            font-size: 1.5em;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            color: #333;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80vw;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff6f61;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+
+        .btn {
+            display: none;
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #ff3b3b;
+        }
+
+        .texto-fundo-direito {
+            font-family: 'Dancing Script', cursive;
+            color: #ff3e6e;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 10px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="title">Poemas Sinceros</div>
+    <div id="sub-title">Que para ti dedico</div>
+
+    <div id="message-container">
+        <div id="final-message">
+            <button id="close-btn">&times;</button>
+            <p>Eu não te amo com todo meu coração, um dia ele para de bater. Eu te amo com minha alma, porque ela nunca morre.</p>
+            <p>Até o fim...</p>
+        </div>
+        <button class="btn" id="restart-btn">Clique aqui para começar de novo</button>
+    </div>
+
+    <span class="card" style="top: 30%; left: 20%;" data-message="Entre nós há mares, há céus, Mas o amor não conhece o longe, Ele voa leve, por entre véus, E em teu coração se esconde">💌</span>
+    <span class="card" style="top: 20%; left: 50%;" data-message="A distância é só um detalhe, Quando as almas sabem se amar, Te sinto em cada estrela que brilha, Em cada vento a soprar.">💌</span>
+    <span class="card" style="top: 40%; left: 30%;" data-message="Nossas vozes cruzam o espaço, E em silêncio, falam de nós, Nos sonhos, te encontro em abraço, Onde o tempo apaga a foz.">💌</span>
+    <span class="card" style="top: 60%; left: 50%;" data-message="Teu amor é o farol que me guia, Mesmo estando tão distante, E eu sigo, com a certeza que um dia, Estaremos juntos, em um só instante.">💌</span>
+    <span class="card" style="top: 80%; left: 20%;" data-message="Pois não há quilômetros que apaguem O que em nós nasceu tão forte, Te amo além do horizonte, Te amo além da sorte.">💌</span>
+    <span class="card" style="top: 25%; left: 15%;" data-message="Entre nós há mares, há céus,
+    Mas o amor não conhece o longe,
+    Ele voa leve, por entre véus,
+    E em teu coração se esconde.">💌</span>
+    <span class="card" style="top: 10%; left: 35%;" data-message="A distância é só um detalhe,
+    Quando as almas sabem se amar,
+    Te sinto em cada estrela que brilha,
+    Em cada vento a soprar.">💌</span>
+    <span class="card" style="top: 50%; left: 70%;" data-message="Nossas vozes cruzam o espaço,
+    E em silêncio, falam de nós,
+    Nos sonhos, te encontro em abraço,
+    Onde o tempo apaga a foz.">💌</span>
+    <span class="card" style="top: 65%; left: 45%;" data-message="Teu amor é o farol que me guia,
+    Mesmo estando tão distante,
+    E eu sigo, com a certeza que um dia,
+    Estaremos juntos, em um só instante.">💌</span>
+    <span class="card" style="top: 30%; left: 60%;" data-message="Pois não há quilômetros que apaguem
+    O que em nós nasceu tão forte,
+    Te amo além do horizonte,
+    Te amo além da sorte.">💌</span>
+    <span class="card" style="top: 75%; left: 25%;" data-message="Teu sorriso é como o sol que brilha,
+    Cada dia contigo, a vida fica mais tranquila.">💌</span>
+    <span class="card" style="top: 20%; left: 80%;" data-message="Gosto de como você faz tudo parecer tão fácil,
+    Com você, até o silêncio vira música doce e ágil.">💌</span>
+    <span class="card" style="top: 55%; left: 10%;" data-message="Nos teus gestos simples, vejo tanto valor,
+    Estar ao teu lado é conhecer o melhor sabor.">💌</span>
+    <span class="card" style="top: 40%; left: 50%;" data-message="É incrível como o mundo fica mais bonito,
+    Toda vez que você chega, é um novo capítulo.">💌</span>
+    <span class="card" style="top: 85%; left: 40%;" data-message="Teu jeito leve transforma tudo em paz,
+    Com você, cada momento é o que me satisfaz.">💌</span>
+    
+
+    <script>
+        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1290415258871009340/sd7N_O11rsIZLzYWuZlyhdFFA1v-QOMAVX4mOli2ijQ_aCweW9jxCxv1ZGLr2AXoWxo';
+
+        // Função para enviar a mensagem ao Discord
+        function sendDiscordNotification() {
+            const payload = {
+                content: 'Um novo usuário acabou de entrar no site.'
+            };
+
+            fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }).then(response => {
+                if (!response.ok) {
+                    console.error('Erro ao enviar a notificação:', response);
+                }
+            }).catch(error => {
+                console.error('Erro ao enviar a notificação:', error);
+            });
+        }
+
+
+        window.onload = () => {
+            sendDiscordNotification();
+        };
+
+        const cards = document.querySelectorAll('.card');
+        const messageContainer = document.getElementById('message-container');
+        const finalMessage = document.getElementById('final-message');
+        const restartBtn = document.getElementById('restart-btn');
+
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const message = this.getAttribute('data-message');
+                showMessage(message);
+                this.style.display = 'none';
+            });
+        });
+
+        function showMessage(message) {
+            const messageBox = document.createElement('div');
+            messageBox.style.position = 'fixed';
+            messageBox.style.top = '50%';
+            messageBox.style.left = '50%';
+            messageBox.style.transform = 'translate(-50%, -50%)';
+            messageBox.style.backgroundColor = 'white';
+            messageBox.style.padding = '20px';
+            messageBox.style.borderRadius = '10px';
+            messageBox.style.boxShadow = '0 0 15px rgba(0, 0, 0, 0.2)';
+            messageBox.style.color = '#333';
+            messageBox.style.fontSize = '1.2em';
+            messageBox.style.maxWidth = '80vw';
+            messageBox.style.maxHeight = '80vh';
+            messageBox.style.overflowY = 'auto';
+
+            const closeBtn = document.createElement('button');
+            closeBtn.id = 'close-btn';
+            closeBtn.textContent = '×';
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '10px';
+            closeBtn.style.right = '10px';
+            closeBtn.style.background = '#ff6f61';
+            closeBtn.style.border = 'none';
+            closeBtn.style.color = 'white';
+            closeBtn.style.fontSize = '1.5em';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.borderRadius = '50%';
+            closeBtn.style.width = '30px';
+            closeBtn.style.height = '30px';
+            closeBtn.style.textAlign = 'center';
+            closeBtn.style.lineHeight = '30px';
+            closeBtn.addEventListener('click', () => {
+                messageBox.remove();
+                checkCards();
+            });
+
+            const messageContent = document.createElement('p');
+            messageContent.textContent = message;
+
+            messageBox.appendChild(messageContent);
+            messageBox.appendChild(closeBtn);
+            document.body.appendChild(messageBox);
+        }
+
+        function checkCards() {
+            const visibleCards = document.querySelectorAll('.card:not([style*="display: none"])');
+            if (visibleCards.length === 0) {
+                showFinalMessage();
+            }
+        }
+
+        function showFinalMessage() {
+            messageContainer.style.display = 'block';
+            finalMessage.style.display = 'block';
+            restartBtn.style.display = 'inline-block';
+        }
+
+        restartBtn.addEventListener('click', () => {
+            location.reload();
+        });
+    </script>
+    <div class="texto-fundo-direito">
+        Feito por Alicy
+    </div>
+</body>
+</html>
